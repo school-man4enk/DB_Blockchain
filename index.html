@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Інтерактивний тест: SQL та Блокчейн</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            background: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .question {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .question h3 {
+            margin-bottom: 10px;
+            color: #007acc;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        #submitBtn, #restartBtn, #printBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px 10px 0 0;
+            cursor: pointer;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #result {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: #444;
+        }
+        #topicBreakdown {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Тест: SQL та Блокчейн</h1>
+    <form id="quizForm">
+        <!-- SQL Questions (1–20) -->
+        <div class="question">
+            <h3>1. Яка SQL команда використовується для вибору даних з таблиці?</h3>
+            <label><input type="radio" name="q1" value="0">GET</label>
+            <label><input type="radio" name="q1" value="1">SELECT</label>
+            <label><input type="radio" name="q1" value="0">CHOOSE</label>
+        </div>
+        <div class="question">
+            <h3>2. Як вставити новий запис у таблицю?</h3>
+            <label><input type="radio" name="q2" value="1">INSERT INTO</label>
+            <label><input type="radio" name="q2" value="0">ADD RECORD</label>
+            <label><input type="radio" name="q2" value="0">CREATE RECORD</label>
+        </div>
+        <div class="question">
+            <h3>3. Яка команда SQL використовується для оновлення даних у таблиці?</h3>
+            <label><input type="radio" name="q3" value="1">UPDATE</label>
+            <label><input type="radio" name="q3" value="0">MODIFY</label>
+            <label><input type="radio" name="q3" value="0">CHANGE</label>
+        </div>
+        <div class="question">
+            <h3>4. Як видалити запис з таблиці?</h3>
+            <label><input type="radio" name="q4" value="1">DELETE FROM</label>
+            <label><input type="radio" name="q4" value="0">REMOVE RECORD</label>
+            <label><input type="radio" name="q4" value="0">DROP RECORD</label>
+        </div>
+        <div class="question">
+            <h3>5. Як називається команда SQL для створення таблиці?</h3>
+            <label><input type="radio" name="q5" value="1">CREATE TABLE</label>
+            <label><input type="radio" name="q5" value="0">MAKE TABLE</label>
+            <label><input type="radio" name="q5" value="0">NEW TABLE</label>
+        </div>
+        <div class="question">
+            <h3>6. Яке ключове слово використовується для сортування результатів запиту?</h3>
+            <label><input type="radio" name="q6" value="1">ORDER BY</label>
+            <label><input type="radio" name="q6" value="0">SORT</label>
+            <label><input type="radio" name="q6" value="0">ARRANGE</label>
+        </div>
+        <div class="question">
+            <h3>7. Яке ключове слово використовується для фільтрації результатів?</h3>
+            <label><input type="radio" name="q7" value="1">WHERE</label>
+            <label><input type="radio" name="q7" value="0">IF</label>
+            <label><input type="radio" name="q7" value="0">FILTER</label>
+        </div>
+        <div class="question">
+            <h3>8. Яке ключове слово використовується для об'єднання таблиць?</h3>
+            <label><input type="radio" name="q8" value="1">JOIN</label>
+            <label><input type="radio" name="q8" value="0">MERGE</label>
+            <label><input type="radio" name="q8" value="0">LINK</label>
+        </div>
+        <div class="question">
+            <h3>9. Як називається об'єднання всіх унікальних значень з двох таблиць?</h3>
+            <label><input type="radio" name="q9" value="1">UNION</label>
+            <label><input type="radio" name="q9" value="0">COMBINE</label>
+            <label><input type="radio" name="q9" value="0">MERGE</label>
+        </div>
+        <div class="question">
+            <h3>10. Що таке первинний ключ у SQL?</h3>
+            <label><input type="radio" name="q10" value="1">Унікальний ідентифікатор для кожного запису</label>
+            <label><input type="radio" name="q10" value="0">Ключ для шифрування</label>
+            <label><input type="radio" name="q10" value="0">Пароль адміністратора</label>
+        </div>
+        <div class="question">
+            <h3>11. Як обмежити кількість результатів у SQL-запиті?</h3>
+            <label><input type="radio" name="q11" value="1">LIMIT</label>
+            <label><input type="radio" name="q11" value="0">MAX</label>
+            <label><input type="radio" name="q11" value="0">ROWS</label>
+        </div>
+        <div class="question">
+            <h3>12. Який тип JOIN повертає всі записи з обох таблиць?</h3>
+            <label><input type="radio" name="q12" value="1">FULL JOIN</label>
+            <label><input type="radio" name="q12" value="0">LEFT JOIN</label>
+            <label><input type="radio" name="q12" value="0">INNER JOIN</label>
+        </div>
+        <div class="question">
+            <h3>13. Яке ключове слово використовується для зміни структури таблиці?</h3>
+            <label><input type="radio" name="q13" value="1">ALTER</label>
+            <label><input type="radio" name="q13" value="0">MODIFY</label>
+            <label><input type="radio" name="q13" value="0">CHANGE</label>
+        </div>
+        <div class="question">
+            <h3>14. Як називається обмеження, що забезпечує унікальність значень у стовпці?</h3>
+            <label><input type="radio" name="q14" value="1">UNIQUE</label>
+            <label><input type="radio" name="q14" value="0">NOT NULL</label>
+            <label><input type="radio" name="q14" value="0">CHECK</label>
+        </div>
+        <div class="question">
+            <h3>15. Що робить команда DROP TABLE?</h3>
+            <label><input type="radio" name="q15" value="1">Видаляє таблицю повністю</label>
+            <label><input type="radio" name="q15" value="0">Очищає дані таблиці</label>
+            <label><input type="radio" name="q15" value="0">Архівує таблицю</label>
+        </div>
+        <div class="question">
+            <h3>16. Як називається підзапит у SQL?</h3>
+            <label><input type="radio" name="q16" value="1">Subquery</label>
+            <label><input type="radio" name="q16" value="0">Child query</label>
+            <label><input type="radio" name="q16" value="0">Underselect</label>
+        </div>
+        <div class="question">
+            <h3>17. Як об’єднати умови в WHERE за допомогою логіки?</h3>
+            <label><input type="radio" name="q17" value="1">AND / OR</label>
+            <label><input type="radio" name="q17" value="0">WITH / ALSO</label>
+            <label><input type="radio" name="q17" value="0">IF / ELSE</label>
+        </div>
+        <div class="question">
+            <h3>18. Яка функція обчислює середнє значення у SQL?</h3>
+            <label><input type="radio" name="q18" value="1">AVG()</label>
+            <label><input type="radio" name="q18" value="0">MEAN()</label>
+            <label><input type="radio" name="q18" value="0">AVERAGE()</label>
+        </div>
+        <div class="question">
+            <h3>19. Яке ключове слово застосовується для групування результатів?</h3>
+            <label><input type="radio" name="q19" value="1">GROUP BY</label>
+            <label><input type="radio" name="q19" value="0">AGGREGATE</label>
+            <label><input type="radio" name="q19" value="0">SET</label>
+        </div>
+        <div class="question">
+            <h3>20. Яка функція рахує кількість записів у SQL?</h3>
+            <label><input type="radio" name="q20" value="1">COUNT()</label>
+            <label><input type="radio" name="q20" value="0">TOTAL()</label>
+            <label><input type="radio" name="q20" value="0">SUM()</label>
+        </div>
+
+        <!-- Blockchain Questions (21–30) -->
+        <div class="question">
+            <h3>21. Що таке блок у блокчейні?</h3>
+            <label><input type="radio" name="q21" value="0">Програма для майнінгу</label>
+            <label><input type="radio" name="q21" value="1">Структура даних, що містить транзакції</label>
+            <label><input type="radio" name="q21" value="0">Смарт-контракт</label>
+        </div>
+        <div class="question">
+            <h3>22. Яку роль відіграє хеш-функція у блокчейні?</h3>
+            <label><input type="radio" name="q22" value="0">Визначає швидкість майнінгу</label>
+            <label><input type="radio" name="q22" value="1">Забезпечує цілісність даних у блоках</label>
+            <label><input type="radio" name="q22" value="0">Шифрує транзакції</label>
+        </div>
+        <div class="question">
+            <h3>23. Що таке майнінг у блокчейн-технології?</h3>
+            <label><input type="radio" name="q23" value="1">Процес верифікації транзакцій і додавання їх до блокчейну</label>
+            <label><input type="radio" name="q23" value="0">Купівля криптовалюти</label>
+            <label><input type="radio" name="q23" value="0">Розробка нових блокчейн-платформ</label>
+        </div>
+        <div class="question">
+            <h3>24. Що таке децентралізація в контексті блокчейну?</h3>
+            <label><input type="radio" name="q24" value="1">Відсутність центрального контролю над мережею</label>
+            <label><input type="radio" name="q24" value="0">Централізоване управління вузлами</label>
+            <label><input type="radio" name="q24" value="0">Розміщення серверів у одному центрі</label>
+        </div>
+        <div class="question">
+            <h3>25. Що таке смарт-контракт?</h3>
+            <label><input type="radio" name="q25" value="1">Програма, що автоматично виконує умови договору</label>
+            <label><input type="radio" name="q25" value="0">Юридичний документ</label>
+            <label><input type="radio" name="q25" value="0">Ключ для шифрування</label>
+        </div>
+        <div class="question">
+            <h3>26. Який алгоритм консенсусу використовує Bitcoin?</h3>
+            <label><input type="radio" name="q26" value="1">Proof of Work</label>
+            <label><input type="radio" name="q26" value="0">Proof of Stake</label>
+            <label><input type="radio" name="q26" value="0">Delegated Proof</label>
+        </div>
+        <div class="question">
+            <h3>27. Що забезпечує незмінність записів у блокчейні?</h3>
+            <label><input type="radio" name="q27" value="1">Хеш-функції та зв’язок між блоками</label>
+            <label><input type="radio" name="q27" value="0">Масштабування мережі</label>
+            <label><input type="radio" name="q27" value="0">Зміна алгоритму</label>
+        </div>
+        <div class="question">
+            <h3>28. Яка роль мережевих вузлів (ноди) у блокчейні?</h3>
+            <label><input type="radio" name="q28" value="1">Зберігають копії блокчейну та перевіряють транзакції</label>
+            <label><input type="radio" name="q28" value="0">Створюють хеш-функції</label>
+            <label><input type="radio" name="q28" value="0">Продають токени</label>
+        </div>
+        <div class="question">
+            <h3>29. Що таке приватний ключ у криптовалюті?</h3>
+            <label><input type="radio" name="q29" value="1">Секретний код для доступу до гаманця</label>
+            <label><input type="radio" name="q29" value="0">Публічний ідентифікатор</label>
+            <label><input type="radio" name="q29" value="0">Пароль до інтернету</label>
+        </div>
+        <div class="question">
+            <h3>30. Яка з переваг притаманна блокчейн-технології?</h3>
+            <label><input type="radio" name="q30" value="1">Прозорість і захист від фальсифікацій</label>
+            <label><input type="radio" name="q30" value="0">Обмеження доступу до даних</label>
+            <label><input type="radio" name="q30" value="0">Можливість централізованого контролю</label>
+        </div>
+
+        <button type="button" id="submitBtn">Перевірити відповіді</button>
+        <button type="button" id="restartBtn" style="display:none;">Пройти ще раз</button>
+        <button type="button" id="printBtn">Зберегти в PDF</button>
+    </form>
+
+    <div id="result"></div>
+    <div id="topicBreakdown"></div>
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            const form = document.getElementById("quizForm");
+            const answers = form.querySelectorAll("input[type='radio']:checked");
+            let totalScore = 0;
+            let sqlScore = 0;
+            let blockchainScore = 0;
+
+            answers.forEach(ans => {
+                const qNumber = parseInt(ans.name.replace('q', ''));
+                const val = parseInt(ans.value);
+                totalScore += val;
+                if (qNumber <= 20) sqlScore += val;
+                else blockchainScore += val;
+            });
+
+            document.getElementById("result").textContent = `Ваш результат: ${totalScore} з 30 балів.`;
+            document.getElementById("topicBreakdown").innerHTML = `
+                <p>Балів за SQL: ${sqlScore} з 20</p>
+                <p>Балів за Блокчейн: ${blockchainScore} з 10</p>
+            `;
+
+            this.style.display = 'none';
+            document.getElementById("restartBtn").style.display = 'inline-block';
+        });
+
+        document.getElementById("restartBtn").addEventListener("click", function() {
+            document.querySelectorAll("input[type='radio']").forEach(i => i.checked = false);
+            document.getElementById("result").textContent = "";
+            document.getElementById("topicBreakdown").innerHTML = "";
+            this.style.display = 'none';
+            document.getElementById("submitBtn").style.display = 'inline-block';
+        });
+
+        document.getElementById("printBtn").addEventListener("click", function() {
+            window.print();
+        });
+    </script>
+</body>
+</html>
