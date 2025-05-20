@@ -26,9 +26,21 @@
             margin-bottom: 10px;
             color: #007acc;
         }
-        label {
-            display: block;
-            margin-bottom: 5px;
+        .answer-option {
+            background-color: #e6f2ff;
+            border: 1px solid #cce0ff;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.2s ease;
+        }
+        .answer-option:hover {
+            background-color: #d4eaff;
+        }
+        .answer-option input[type="radio"] {
+            margin-right: 10px;
         }
         #submitBtn, #restartBtn, #printBtn {
             padding: 10px 20px;
@@ -277,7 +289,24 @@
                 return parts[0] === name ? decodeURIComponent(parts[1]) : r
             }, '');
         }
-
+        function shuffleAnswers() {
+            const questions = document.querySelectorAll('.question');
+            questions.forEach(question => {
+                const answers = Array.from(question.querySelectorAll('label'));
+                const container = answers[0].parentNode;
+                answers.forEach(label => container.removeChild(label));
+                for (let i = answers.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [answers[i], answers[j]] = [answers[j], answers[i]];
+                }
+                answers.forEach(label => {
+                    label.classList.add("answer-option");
+                    container.appendChild(label);
+                });
+            });
+        }
+        document.addEventListener("DOMContentLoaded", shuffleAnswers);
+        
         document.getElementById("submitBtn").addEventListener("click", function () {
             const userName = document.getElementById("nameInput").value.trim();
             if (!userName) {
@@ -326,6 +355,7 @@
             document.getElementById("nameInput").value = "";
             this.style.display = 'none';
             document.getElementById("submitBtn").style.display = 'inline-block';
+            shuffleAnswers();
         });
 
         document.getElementById("printBtn").addEventListener("click", function () {
