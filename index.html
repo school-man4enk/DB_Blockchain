@@ -53,10 +53,25 @@
             text-align: center;
             color: #555;
         }
+        #nameInputWrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #nameInput {
+            padding: 10px;
+            font-size: 16px;
+            width: 50%;
+        }
     </style>
 </head>
 <body>
     <h1>Тест: SQL та Блокчейн</h1>
+
+    <div id="nameInputWrapper">
+        <label for="nameInput">Введіть ваше ім'я:</label>
+        <input type="text" id="nameInput" placeholder="Ім'я">
+    </div>
+
     <form id="quizForm">
         <!-- SQL Questions (1–20) -->
         <div class="question">
@@ -251,7 +266,35 @@
     <div id="topicBreakdown"></div>
 
     <script>
-        document.getElementById("submitBtn").addEventListener("click", function() {
+        function setCookie(name, value, days) {
+            const expires = new Date(Date.now() + days * 864e5).toUTCString();
+            document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=/';
+        }
+
+        function getCookie(name) {
+            return document.cookie.split('; ').reduce((r, v) => {
+                const parts = v.split('=');
+                return parts[0] === name ? decodeURIComponent(parts[1]) : r
+            }, '');
+        }
+
+        document.getElementById("submitBtn").addEventListener("click", function () {
+            const userName = document.getElementById("nameInput").value.trim();
+            if (!userName) {
+                alert("Будь ласка, введіть ваше ім'я перед початком тесту.");
+                return;
+            }
+
+            const attemptKey = `attempts_${userName}`;
+            let attempts = parseInt(getCookie(attemptKey) || '0');
+
+            if (attempts >= 3) {
+                alert("Ви вичерпали ліміт із 3 спроб. Дякуємо за участь.");
+                return;
+            }
+
+            setCookie(attemptKey, attempts + 1, 7); // зберігаємо на 7 днів
+
             const form = document.getElementById("quizForm");
             const answers = form.querySelectorAll("input[type='radio']:checked");
             let totalScore = 0;
@@ -266,7 +309,7 @@
                 else blockchainScore += val;
             });
 
-            document.getElementById("result").textContent = `Ваш результат: ${totalScore} з 30 балів.`;
+            document.getElementById("result").textContent = `${userName}, ваш результат: ${totalScore} з 30 балів.`;
             document.getElementById("topicBreakdown").innerHTML = `
                 <p>Балів за SQL: ${sqlScore} з 20</p>
                 <p>Балів за Блокчейн: ${blockchainScore} з 10</p>
@@ -276,17 +319,19 @@
             document.getElementById("restartBtn").style.display = 'inline-block';
         });
 
-        document.getElementById("restartBtn").addEventListener("click", function() {
+        document.getElementById("restartBtn").addEventListener("click", function () {
             document.querySelectorAll("input[type='radio']").forEach(i => i.checked = false);
             document.getElementById("result").textContent = "";
             document.getElementById("topicBreakdown").innerHTML = "";
+            document.getElementById("nameInput").value = "";
             this.style.display = 'none';
             document.getElementById("submitBtn").style.display = 'inline-block';
         });
 
-        document.getElementById("printBtn").addEventListener("click", function() {
+        document.getElementById("printBtn").addEventListener("click", function () {
             window.print();
         });
     </script>
 </body>
 </html>
+       
